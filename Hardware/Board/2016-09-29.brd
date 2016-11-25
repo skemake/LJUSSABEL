@@ -5636,9 +5636,9 @@
 <wire x1="2.3" y1="0" x2="2.3" y2="6.6" width="0.127" layer="21"/>
 <wire x1="2.3" y1="6.6" x2="0" y2="6.6" width="0.127" layer="21"/>
 <wire x1="0" y1="6.6" x2="0" y2="0" width="0.127" layer="21"/>
-<pad name="S_3" x="1.15" y="1" drill="0.8" shape="square"/>
-<pad name="D_2" x="1.15" y="3.3" drill="0.8" shape="square"/>
-<pad name="G_1" x="1.15" y="5.6" drill="0.8" shape="square"/>
+<pad name="S_3" x="1.15" y="1" drill="0.9" shape="square"/>
+<pad name="D_2" x="1.15" y="3.3" drill="0.9" shape="square"/>
+<pad name="G_1" x="1.15" y="5.6" drill="0.9" shape="square"/>
 </package>
 </packages>
 </library>
@@ -5647,7 +5647,7 @@
 Based on the previous libraries:
 &lt;ul&gt;
 &lt;li&gt;r.lbr
-&lt;li&gt;cap.lbr 
+&lt;li&gt;cap.lbr
 &lt;li&gt;cap-fe.lbr
 &lt;li&gt;captant.lbr
 &lt;li&gt;polcap.lbr
@@ -6828,10 +6828,10 @@ http://www.xganon.com</description>
 <designrules name="default *">
 <description language="de">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
 &lt;p&gt;
-Die Standard-Design-Rules sind so gewÃ¤hlt, dass sie fÃ¼r 
-die meisten Anwendungen passen. Sollte ihre Platine 
+Die Standard-Design-Rules sind so gewÃ¤hlt, dass sie fÃ¼r
+die meisten Anwendungen passen. Sollte ihre Platine
 besondere Anforderungen haben, treffen Sie die erforderlichen
-Einstellungen hier und speichern die Design Rules unter 
+Einstellungen hier und speichern die Design Rules unter
 einem neuen Namen ab.</description>
 <description language="en">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
 &lt;p&gt;
