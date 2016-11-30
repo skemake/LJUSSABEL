@@ -52,6 +52,10 @@ bool clashInterruptTriggered=false;
 // Do not trigger swings directly after clash
 #define CLASH_SWING_OVERRIDE_DURATION 1000
 
+// Global for hum restart timing
+unsigned long latestActivityMillis=0L;
+unsigned long millisNow=0L;
+#define HUM_RESTART_INTERVAL 2000 
 
 // Minimum swing sound time
 #define SWING_SOUND_DURATION 1000
@@ -108,6 +112,7 @@ void loop()
   ButtonAct.tick();
   Led.poke();
   EXEC(Machine);
+  millisNow=millis();
 }
 
 State waitStateRunOnce()
@@ -159,6 +164,7 @@ State litStateRunOnce()
   if(Led.fadeIn(500)) // returns true if led was off
   {
     Soundchip.play(getRandom(fx_poweron));
+    latestActivityMillis=millisNow;
   }
   else
   { // led is on, so we should be humming already (e.g. returning from lockup)
@@ -172,16 +178,19 @@ State litState()
   if(Accelerometer.isSwinging())
   {
     swing();
+    latestActivityMillis=millisNow;
   }
 
   if(clashInterruptTriggered)
   {
     clash();
+    latestActivityMillis=millisNow;
   }
 
-  // Restart humming if we have silence
-  if(Soundchip.isBusy() == false)
+  // Restart humming if we have silence and there has been some time since last activity
+  if (((unsigned long)(millisNow - latestActivityMillis) >= HUM_RESTART_INTERVAL) &&(Soundchip.isBusy() == false))
   {
+    latestActivityMillis=millisNow;
     trace("Restart humming");
     Soundchip.play(getRandom(fx_hum));
     Soundchip.repeat();
@@ -203,6 +212,7 @@ State lockupStateRunOnce()
 
   Soundchip.play(getRandom(fx_lockup));
   Soundchip.repeat();
+  latestActivityMillis=millisNow;
 }
 
 State lockupState()
