@@ -1,0 +1,9 @@
+Bill of Materials
+
+TBD
+
+- Circuit board
+- Arduino Pro Mini 328 - 5V/16MHz
+- DC-DC ...something
+- Sound chip..
+- ...
