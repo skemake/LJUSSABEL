@@ -115,10 +115,10 @@ State waitStateRunOnce()
   trace("Enter wait state.");
   // set button function pointers
   ButtonAct.attachClick(enterLitState);
+  ButtonAct.attachLongPressStart(enterLitState);
 
   // disable other functions
   ButtonAct.attachDoubleClick(buttonDisabled);
-  ButtonAct.attachLongPressStart(buttonDisabled);
   ButtonAct.attachDuringLongPress(buttonDisabled);
   ButtonAct.attachLongPressStop(buttonDisabled);
 
