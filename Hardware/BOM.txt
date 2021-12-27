@@ -1,9 +1,13 @@
 Bill of Materials
 
-TBD
+- Circuit board: After brd file in this repository
 
-- Circuit board
-- Arduino Pro Mini 328 - 5V/16MHz
-- DC-DC ...something
-- Sound chip..
-- ...
+On top of this moderboard the following components are mounted:
+- Moderboard: Arduino Pro Mini 328 - 5V/16MHz
+- DC-DC converter: 5V to 3.3V
+- Sound chip: WT588D
+- Accelerometer: GY-61
+- Power MOSFET: 3 pcs 14n05
+- Diode: 2 pcs 1n4148
+- Resistor: 1pcs 568ohm
+- Vibration sensor: SW18010P 
